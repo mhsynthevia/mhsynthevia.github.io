@@ -128,7 +128,7 @@
         </section>
         <section class="contact-info">
             <h2>Company Info</h2>
-            <p>Email: m.hasnain@mhsynthevia.com</p>
+            <p>Email: info@mhsynthevia.com</p>
             <p>Contact Number: +1-332-288-1844</p>
             <p>Website: mhsynthevia.com</p>
             <p>Company: Information Technology Company</p>
