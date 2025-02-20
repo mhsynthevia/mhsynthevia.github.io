@@ -131,6 +131,8 @@
             <p>Email: info@mhsynthevia.com</p>
             <p>Contact Number: +1-332-288-1844</p>
             <p>Website: mhsynthevia.com</p>
+            <p>Company Address: Office Court Building 228, Oud Maitha road
+​Oud Metha, Bur Dubai, Dubai, United Arab Emirates</p>
             <p>Company: Information Technology Company</p>
         </section>
     </main>
