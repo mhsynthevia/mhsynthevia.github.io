@@ -132,7 +132,7 @@
             <p>Contact Number: +1-332-288-1844</p>
             <p>Website: mhsynthevia.com</p>
             <p>Address: Office Court Building 228, Oud Maitha road
-​Oud Metha, Bur Dubai, Dubai, United Arab Emirates</p>
+​Oud Metha, Bur Dubai, Dubai, United Arab Emirates  PO Box: 115304</p>
             <p>Company type: Information Technology Company</p>
         </section>
     </main>
