@@ -184,11 +184,7 @@
         </section>
     </main>
     <footer>
-        <div class="footer-container">
-            <div class="footer-column" style="text-align: center;">
-                <p>© 2025 MH Synthevia. All rights reserved.</p>
-            </div>
-        </div>
+        <p>© 2025 MH Synthevia. All rights reserved.</p>
     </footer>
     <script>
         document.getElementById('contact-form').addEventListener('submit', function(event) {
