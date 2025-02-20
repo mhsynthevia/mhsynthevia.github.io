@@ -1,4 +1,4 @@
-<img src="https://github.com/mhsynthevia/mhsynthevia.github.io/blob/main/Logo.png" alt="Company Logo">
+![Company Logo](github.com/mhsynthevia/mhsynthevia.github.io/blob/main/Logo.png)
 <html lang="en">
 <head>
     <meta charset="UTF-8">
