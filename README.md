@@ -1,3 +1,4 @@
+<img src="MH Synthevia Logo.png" alt="MH Synthevia Logo">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
