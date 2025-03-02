@@ -1,6 +1,10 @@
 <a href="https://mhsynthevia.com">
     <img src="logo.png" alt="Logo" style="width: 100px; height: auto;">
     <a>
+<button onclick="window.open('https://wa.me/13322881844?text=Hello%2C%20I%20need%20help!', '_blank')" 
+        style="background-color: #25D366; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+    Chat with us on WhatsApp
+</button>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
