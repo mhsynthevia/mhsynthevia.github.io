@@ -1,4 +1,6 @@
-<img src="logo.png" alt="Logo">
+<a href="https://mhsynthevia.com">
+    <img src="logo.png" alt="Logo" style="width: 100px; height: auto;">
+    <a>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
