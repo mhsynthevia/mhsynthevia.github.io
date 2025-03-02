@@ -1,3 +1,4 @@
+<img src="logo.png" alt="Logo">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
