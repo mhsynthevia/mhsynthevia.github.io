@@ -1,4 +1,3 @@
-<img src="https://github.com/mhsynthevia/mhsynthevia.github.io/blob/main/Logo.png" alt="Logo">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
