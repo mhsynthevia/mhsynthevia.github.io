@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZIINA Pay Integration</title>
+    <script src="https://cdn.ziinapay.com/sdk.js"></script> <!-- Replace with the actual SDK URL -->
+</head>
+<body>
+    <h1>Welcome to ZIINA Pay Integration</h1>
+    <form id="payment-form">
+        <div id="ziina-pay-element"><!-- ZIINA Pay Element will be inserted here --></div>
+        <button type="submit">Pay</button>
+    </form>
+
+    <script>
+        // Initialize ZIINA Pay with your API key
+        const ziinaPay = new ZiinaPay('fz0iVyOEYkYzWU9pgrgLvK6kpSKudcmiBW1XoZSOsTnzShaB6MSMCEfoe+MJ4c9R'); // Replace with your actual API key
+
+        // Create an instance of the payment element
+        const payElement = ziinaPay.elements().create('payment');
+
+        // Mount the payment element to the DOM
+        payElement.mount('#ziina-pay-element');
+
+        // Handle form submission
+        const form = document.getElementById('payment-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const { token, error } = await ziinaPay.createToken(payElement);
+
+            if (error) {
+                console.error(error.message);
+            } else {
+                // Send the token to your backend for processing
+                const response = await fetch('https://tender-troubled-wrist.glitch.me', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ token: token.id }),
+                });
+
+                if (response.ok) {
+                    console.log('Payment successful');
+                } else {
+                    console.error('Payment failed');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
