@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial;
-  background: #0a0a0a;
+  background: #0b0f1a;
   color: white;
 }
 
@@ -10,12 +10,19 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background: black;
+  background: #0d1323;
+  position: relative;
 }
 
 .logo {
-  color: gold;
+  color: #00aaff;
   font-weight: bold;
+  font-size: 20px;
+}
+
+/* NAV */
+.nav {
+  display: flex;
 }
 
 .nav a {
@@ -24,11 +31,18 @@ body {
   text-decoration: none;
 }
 
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
 /* HERO */
 .hero {
   text-align: center;
   padding: 120px 20px;
-  background: url('https://source.unsplash.com/1600x900/?ai,technology') center/cover;
+  background: url('https://source.unsplash.com/1600x900/?technology,ai') center/cover;
 }
 
 .hero h1 {
@@ -38,17 +52,18 @@ body {
 .hero button {
   margin-top: 20px;
   padding: 10px 20px;
-  background: gold;
+  background: #00aaff;
   border: none;
   cursor: pointer;
 }
 
-/* SERVICES */
-.services {
-  padding: 50px;
+/* SECTIONS */
+section {
+  padding: 60px 20px;
   text-align: center;
 }
 
+/* CARDS */
 .cards {
   display: flex;
   gap: 20px;
@@ -57,7 +72,7 @@ body {
 }
 
 .card {
-  background: #111;
+  background: #111a2e;
   padding: 20px;
   width: 280px;
   border-radius: 10px;
@@ -68,20 +83,15 @@ body {
   border-radius: 10px;
 }
 
-/* ABOUT + CONTACT */
-.about, .contact {
-  padding: 50px;
-  text-align: center;
-}
-
-.contact form {
+/* FORM */
+form {
   display: flex;
   flex-direction: column;
   width: 300px;
   margin: auto;
 }
 
-.contact input, .contact textarea {
+input, textarea {
   margin: 10px 0;
   padding: 10px;
 }
@@ -90,5 +100,27 @@ body {
 footer {
   text-align: center;
   padding: 20px;
-  background: black;
+  background: #0d1323;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: #0d1323;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
