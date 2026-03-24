@@ -1,4 +1,4 @@
-/* assets/css/styles.css - Final Version */
+/* assets/css/styles.css - Final Fixed Version for Mobile Hamburger */
 
 :root {
   --primary: #0d6efd;
@@ -6,7 +6,11 @@
   --light: #e0e0e0;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,7 +23,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(18,18,18,0.98);
+  background: rgba(18, 18, 18, 0.98);
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 1rem 0;
@@ -40,11 +44,13 @@ nav {
   color: var(--primary);
 }
 
+/* === Hamburger Menu (3 Lines) === */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
+  z-index: 1100;
 }
 
 .hamburger span {
@@ -55,6 +61,7 @@ nav {
   transition: all 0.4s ease;
 }
 
+/* Menu */
 .menu {
   display: flex;
   gap: 2rem;
@@ -68,17 +75,27 @@ nav {
   font-weight: 500;
 }
 
-.menu a:hover { color: var(--primary); }
+.menu a:hover {
+  color: var(--primary);
+}
 
-/* Hamburger Active */
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
 
-/* Mobile Menu */
+/* Mobile View - Yahan se 3 lines aur dropdown menu fix hai */
 @media (max-width: 768px) {
-  .hamburger { display: flex; }
-  
+  .hamburger {
+    display: flex;
+  }
+
   .menu {
     position: absolute;
     top: 100%;
@@ -88,16 +105,17 @@ nav {
     flex-direction: column;
     padding: 30px 0;
     gap: 1.8rem;
-    display: none;
+    align-items: center;
+    display: none;           /* Important */
     box-shadow: 0 10px 20px rgba(0,0,0,0.6);
   }
-  
+
   .menu.active {
-    display: flex;
+    display: flex;           /* Important */
   }
 }
 
-/* Sections */
+/* Other Styles */
 section {
   padding: 110px 25px 90px;
   max-width: 1300px;
@@ -129,7 +147,7 @@ footer {
   font-size: 32px;
   font-weight: bold;
   text-decoration: none;
-  margin: 20px 0;
+  margin: 25px 0;
   box-shadow: 0 5px 15px rgba(10,102,194,0.4);
 }
 
