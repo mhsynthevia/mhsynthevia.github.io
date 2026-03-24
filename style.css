@@ -1,0 +1,55 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+nav {
+  background-color: #333;
+}
+
+nav a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: #575757;
+}
+
+h1 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5em;
+}
+
+p {
+  font-family: 'Georgia', serif;
+  font-size: 1.2em;
+}
+
+.footer {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    text-align: left;
+  }
+  h1 {
+    font-size: 2em;
+  }
+}
