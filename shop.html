@@ -3,54 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop - MH Synthevia</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Shop | MH Synthevia - Premium IT Solutions</title>
+    <meta name="description" content="Explore MH Synthevia's premium software licenses, cloud computing tools, and high-end IT hardware.">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        header { background: #2c3e50; color: #fff; padding: 1rem 0; text-align: center; }
-        nav { background: #34495e; padding: 1rem; }
-        nav a { color: #fff; margin: 0 1rem; text-decoration: none; }
-        main { padding: 2rem; max-width: 1200px; margin: 0 auto; }
-        .shop-item { display: inline-block; background: #fff; border: 1px solid #ddd; padding: 1rem; margin: 1rem; border-radius: 5px; width: 220px; }
-        .shop-item button { background: #2c3e50; color: #fff; padding: 0.5rem 1rem; border: none; border-radius: 3px; cursor: pointer; }
-        footer { background: #2c3e50; color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
+        /* Global Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f8f9fa; color: #1a1a1a; line-height: 1.6; }
+
+        /* Navigation (Same Consistent Design) */
+        nav {
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+            height: 80px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+        .logo-container { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 50px; margin-right: 12px; }
+        .brand-name { font-size: 22px; font-weight: 800; color: #002d72; }
+
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { text-decoration: none; color: #444; font-size: 14px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: #00b1eb; }
+
+        /* Shop Header */
+        .shop-header {
+            text-align: center;
+            padding: 60px 10% 40px;
+            background: #ffffff;
+            border-bottom: 1px solid #eee;
+        }
+        .shop-header h1 { font-size: 2.5rem; color: #002d72; font-weight: 900; }
+        .shop-header p { color: #666; margin-top: 10px; font-size: 1.1rem; }
+
+        /* Product Grid */
+        .shop-container { padding: 50px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+
+        .product-img { width: 100%; height: 180px; object-fit: contain; margin-bottom: 15px; }
+        
+        .category { font-size: 11px; color: #00b1eb; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .product-title { font-size: 1.2rem; color: #002d72; margin: 10px 0; font-weight: 700; }
+        .price { font-size: 1.4rem; color: #1a1a1a; font-weight: 800; margin-bottom: 20px; }
+
+        /* Buttons */
+        .btn-group { display: flex; gap: 10px; }
+        .add-btn { 
+            background: #002d72; color: white; border: none; padding: 12px; 
+            border-radius: 6px; cursor: pointer; font-weight: 700; flex: 1; transition: 0.3s;
+        }
+        .add-btn:hover { background: #00b1eb; }
+        
+        .wishlist-btn { 
+            background: #f0f4f8; color: #002d72; border: none; padding: 12px; 
+            border-radius: 6px; cursor: pointer; transition: 0.3s;
+        }
+        .wishlist-btn:hover { color: #ff4757; }
+
+        /* Badges */
+        .badge {
+            position: absolute; top: 15px; left: 15px; background: #00b1eb; 
+            color: white; padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 700;
+        }
+
+        /* Mobile Adjustments */
+        .hamburger { display: none; cursor: pointer; }
+        .hamburger span { display: block; width: 28px; height: 3px; background: #002d72; margin: 6px 0; }
+
+        @media (max-width: 992px) {
+            .hamburger { display: block; }
+            .nav-links {
+                position: fixed; top: 0; right: -100%; height: 100vh; width: 100%;
+                background: #ffffff; flex-direction: column; justify-content: center; align-items: center;
+                transition: 0.5s ease; z-index: 1000;
+            }
+            .nav-links.active { right: 0; }
+            .nav-links li { margin: 20px 0; }
+        }
+
+        footer { background: #001a41; color: white; padding: 50px 10%; text-align: center; margin-top: 50px; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Shop</h1>
-    </header>
+
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="shop.html">Shop</a>
-        <a href="blog.html">Blog</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="MH Synthevia Logo" class="logo-img">
+            <span class="brand-name">MH SYNTHEVIA</span>
+        </a>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="shop.html" style="color: #00b1eb;">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
-    <main>
-        <h2>Welcome to Our Shop</h2>
-        <div class="shop-item">
-            <h3>Item 1</h3>
-            <p>High quality item</p>
-            <p>Price: $59.99</p>
-            <button>Add to Cart</button>
+
+    <header class="shop-header">
+        <h1>Digital Solutions Store</h1>
+        <p>Premium tools and licenses to power your enterprise infrastructure.</p>
+    </header>
+
+    <main class="shop-container">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <div class="badge">Featured</div>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400" alt="CRM" class="product-img">
+            <div class="content">
+                <p class="category">Software</p>
+                <h3 class="product-title">Synthevia CRM Pro</h3>
+                <p class="price">$199.00</p>
+            </div>
+            <div class="btn-group">
+                <button class="add-btn">Purchase Now</button>
+                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            </div>
         </div>
-        <div class="shop-item">
-            <h3>Item 2</h3>
-            <p>Premium item</p>
-            <p>Price: $79.99</p>
-            <button>Add to Cart</button>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=400" alt="Cloud" class="product-img">
+            <div class="content">
+                <p class="category">Cloud Computing</p>
+                <h3 class="product-title">Secure Cloud Hosting</h3>
+                <p class="price">$49.00/mo</p>
+            </div>
+            <div class="btn-group">
+                <button class="add-btn">Add to Cart</button>
+                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            </div>
         </div>
-        <div class="shop-item">
-            <h3>Item 3</h3>
-            <p>Exclusive item</p>
-            <p>Price: $99.99</p>
-            <button>Add to Cart</button>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <div class="badge" style="background: #2ed573;">New</div>
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=400" alt="Security" class="product-img">
+            <div class="content">
+                <p class="category">Cybersecurity</p>
+                <h3 class="product-title">Firewall Elite v4</h3>
+                <p class="price">$299.00</p>
+            </div>
+            <div class="btn-group">
+                <button class="add-btn">Purchase Now</button>
+                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400" alt="Hardware" class="product-img">
+            <div class="content">
+                <p class="category">Hardware</p>
+                <h3 class="product-title">Neural Processor X1</h3>
+                <p class="price">$850.00</p>
+            </div>
+            <div class="btn-group">
+                <button class="add-btn">Add to Cart</button>
+                <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+            </div>
         </div>
     </main>
+
     <footer>
-        <p>&copy; 2026 MH Synthevia. All rights reserved.</p>
+        <p><strong>MH SYNTHEVIA OFFICIAL STORE</strong></p>
+        <p style="opacity: 0.7; margin-top: 10px;">Secure SSL Encrypted Transactions.</p>
+        <p style="margin-top: 20px;">&copy; 2026 MH Synthevia. All rights reserved.</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
 </body>
 </html>
