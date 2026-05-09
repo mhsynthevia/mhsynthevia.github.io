@@ -4,109 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags -->
-    <title>MH Synthevia | Modern IT Solutions</title>
-    <meta name="description" content="MH Synthevia is a leading IT company providing software, cloud, and security solutions.">
+    <!-- Primary Meta Tags -->
+    <title>MH Synthevia | Leading Information Technology & Digital Solutions</title>
+    <meta name="title" content="MH Synthevia | Leading Information Technology & Digital Solutions">
+    <meta name="description" content="MH Synthevia offers cutting-edge IT solutions including software development, cloud engineering, and cybersecurity to help businesses scale globally.">
+    <meta name="keywords" content="MH Synthevia, IT Company, Software Development, Cloud Solutions, Cyber Security, Digital Transformation, MH Synthevia Solutions">
+    <meta name="author" content="MH Synthevia">
+    <meta name="robots" content="index, follow">
     
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { line-height: 1.6; color: #333; }
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mhsynthevia.com/">
+    <meta property="og:title" content="MH Synthevia | Modern Tech Excellence">
+    <meta property="og:description" content="Engineering modern enterprises with scalable IT infrastructure and custom software solutions.">
+    <meta property="og:image" content="logo.png">
 
-        /* Navigation Styles */
+    <style>
+        /* Global Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, BlinkMacSystemFont, Arial, sans-serif; }
+        
+        body { background-color: #ffffff; color: #1a1a1a; line-height: 1.8; overflow-x: hidden; }
+
+        /* Navigation */
         nav {
             background: #ffffff;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 8%;
+            padding: 0 8%;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1001;
+            height: 80px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
         }
 
-        .logo-container { display: flex; align-items: center; text-decoration: none; }
-        .logo-img { height: 40px; margin-right: 10px; }
-        .brand-name { font-size: 20px; font-weight: 800; color: #002d72; }
+        .logo-container { display: flex; align-items: center; text-decoration: none; z-index: 1002; }
+        .logo-img { height: 50px; width: auto; margin-right: 12px; }
+        .brand-name { font-size: 22px; font-weight: 800; color: #002d72; letter-spacing: -0.5px; }
 
         /* Desktop Menu */
         .nav-links { display: flex; list-style: none; }
-        .nav-links li { margin-left: 25px; }
-        .nav-links a { text-decoration: none; color: #444; font-size: 14px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: #444; 
+            font-size: 14px; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            transition: 0.3s; 
+        }
         .nav-links a:hover { color: #00b1eb; }
 
-        /* Hamburger (3 Lines) Icon */
+        /* Hamburger Menu Icon */
         .hamburger {
             display: none;
             cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
+            z-index: 1002;
+            padding: 10px;
         }
         .hamburger span {
             display: block;
-            width: 25px;
+            width: 28px;
             height: 3px;
             background: #002d72;
-            transition: 0.3s;
+            margin: 6px 0;
+            transition: 0.4s ease;
         }
 
-        /* Mobile Responsive Styles */
+        /* Mobile Menu Styles */
         @media (max-width: 992px) {
-            .hamburger { display: flex; }
+            .hamburger { display: block; }
+
             .nav-links {
-                position: absolute;
-                right: 0;
-                top: 70px;
-                background: #ffffff;
+                position: fixed;
+                top: 0;
+                right: -100%;
                 height: 100vh;
-                width: 60%;
+                width: 100%;
+                background: #ffffff;
                 flex-direction: column;
+                justify-content: center;
                 align-items: center;
-                padding-top: 50px;
-                transform: translateX(100%);
-                transition: transform 0.5s ease-in;
-                box-shadow: -5px 0 10px rgba(0,0,0,0.05);
+                transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+                z-index: 1000;
             }
+
+            .nav-links.active { right: 0; }
             .nav-links li { margin: 20px 0; }
-            .nav-links.active { transform: translateX(0%); }
-            
-            /* Animation for 3 lines to X */
-            .hamburger.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+            .nav-links a { font-size: 24px; color: #002d72; font-weight: 700; }
+
+            /* Animation: 3 lines to X */
+            .hamburger.toggle .line1 { transform: rotate(-45deg) translate(-6px, 7px); }
             .hamburger.toggle .line2 { opacity: 0; }
-            .hamburger.toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+            .hamburger.toggle .line3 { transform: rotate(45deg) translate(-6px, -7px); }
         }
 
-        /* Content & Hero Styling */
+        /* Hero Section */
         .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,45,114,0.8), rgba(0,20,50,0.8)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1500');
-            background-size: cover;
+            height: 75vh;
+            background: linear-gradient(135deg, rgba(0,45,114,0.9) 0%, rgba(0,20,50,0.85) 100%), 
+                        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1500') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
             text-align: center;
-            padding: 0 20px;
+            padding: 0 5%;
         }
-        .section-content { padding: 80px 10%; text-align: center; }
+
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; font-weight: 900; }
+        .hero p { font-size: clamp(1rem, 4vw, 1.3rem); max-width: 800px; opacity: 0.9; margin-bottom: 30px; }
+
+        /* Main Content Sections */
+        .section-padding { padding: 100px 10%; }
+        .bg-light { background: #f8faff; }
+        h2 { font-size: 2.5rem; color: #002d72; margin-bottom: 30px; text-align: center; position: relative; }
+        h2::after { content: ''; width: 60px; height: 4px; background: #00b1eb; display: block; margin: 15px auto 0; }
+
+        .content-block { max-width: 1000px; margin: 0 auto; font-size: 1.1rem; color: #444; text-align: justify; }
+        .content-block p { margin-bottom: 25px; }
+
+        /* Services Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .card {
+            background: white;
+            padding: 45px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            border-top: 5px solid #eee;
+        }
+        .card:hover { transform: translateY(-12px); border-top-color: #00b1eb; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+        .card h3 { color: #002d72; margin-bottom: 15px; font-size: 1.5rem; }
+
+        /* Footer */
+        footer { background: #001a41; color: white; padding: 80px 10% 40px; text-align: center; }
+        .footer-brand { font-size: 24px; font-weight: 800; color: #00b1eb; margin-bottom: 15px; }
+        .footer-links { margin: 30px 0; }
+        .footer-links a { color: #fff; text-decoration: none; margin: 0 15px; font-size: 14px; opacity: 0.8; transition: 0.3s; }
+        .footer-links a:hover { opacity: 1; color: #00b1eb; }
+        .copyright { margin-top: 40px; font-size: 13px; opacity: 0.5; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; }
     </style>
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <nav>
         <a href="index.html" class="logo-container">
             <img src="logo.png" alt="MH Synthevia Logo" class="logo-img">
             <span class="brand-name">MH SYNTHEVIA</span>
         </a>
 
-        <!-- 3 Lines Hamburger -->
+        <!-- Hamburger Icon for Mobile -->
         <div class="hamburger" id="hamburger">
             <span class="line1"></span>
             <span class="line2"></span>
             <span class="line3"></span>
         </div>
 
+        <!-- Menu Links -->
         <ul class="nav-links" id="nav-links">
             <li><a href="about.html">About</a></li>
             <li><a href="shop.html">Shop</a></li>
@@ -117,26 +175,111 @@
         </ul>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
         <h1>MH SYNTHEVIA</h1>
-        <p>Innovation and Excellence in Information Technology</p>
+        <p>Architecting Digital Resilience and Intelligent Enterprise Solutions for a Connected World.</p>
     </section>
 
-    <section class="section-content">
-        <h2>About Our Tech Excellence</h2>
-        <p style="margin-top: 20px; text-align: justify;">
-            <strong>MH Synthevia</strong> is at the forefront of the digital revolution. As a dedicated Information Technology partner, we specialize in high-end software architecture, enterprise cloud management, and iron-clad cybersecurity protocols. Our mission is to transform the way businesses interact with technology, making it a tool for growth rather than a hurdle... (yahan aap mazeed 500+ words ka content paste kar sakte hain jo maine upar diya tha).
+    <!-- About Section (Content Rich) -->
+    <section class="section-padding">
+        <h2>Who We Are</h2>
+        <div class="content-block">
+            <p>Welcome to <strong>MH Synthevia</strong>, a global leader in transformative Information Technology solutions. In today’s rapidly evolving digital economy, businesses face the dual challenge of maintaining legacy stability while embracing disruptive innovation. At MH Synthevia, we serve as the bridge between these two worlds, providing the strategic foresight and technical execution necessary to thrive.</p>
+            
+            <p>Founded on the principles of <strong>Innovation, Excellence, and Integrity</strong>, our firm has grown into a multi-disciplinary powerhouse. Our team comprises some of the most brilliant minds in software engineering, data science, and infrastructure management. We don’t just provide services; we build long-term partnerships that empower our clients to outpace their competition and redefine their industries.</p>
+            
+            <p>Our approach is rooted in understanding the unique DNA of every business we serve. By combining deep domain expertise with cutting-edge tools like Artificial Intelligence and Cloud-Native architectures, we deliver solutions that are not only effective today but are built to scale for the challenges of tomorrow. From securing critical data assets to automating complex workflows, MH Synthevia is your trusted navigator in the digital frontier.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section-padding bg-light">
+        <h2>Our Solutions</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Custom Software</h3>
+                <p>We build robust, scalable applications tailored to your specific business logic. Our development lifecycle ensures high-speed performance and a focus on intuitive user experience across all platforms.</p>
+            </div>
+            <div class="card">
+                <h3>Cloud Engineering</h3>
+                <p>Maximize agility with our expert cloud services. We specialize in hybrid-cloud migrations, serverless computing, and cost-optimization strategies on AWS, Azure, and Google Cloud.</p>
+            </div>
+            <div class="card">
+                <h3>Cyber Defense</h3>
+                <p>In an age of increasing threats, MH Synthevia provides military-grade security. Our services include real-time threat monitoring, penetration testing, and advanced data encryption protocols.</p>
+            </div>
+            <div class="card">
+                <h3>Data Analytics & AI</h3>
+                <p>Unlock the hidden value in your data. Our machine learning models and big-data analytics tools provide predictive insights that allow you to make smarter, faster business decisions.</p>
+            </div>
+            <div class="card">
+                <h3>Retail Tech & E-Commerce</h3>
+                <p>Revolutionize your customer journey. We integrate high-conversion storefronts with seamless backend logistics, payment gateways, and real-time inventory management.</p>
+            </div>
+            <div class="card">
+                <h3>IT Consultancy</h3>
+                <p>Align your technology roadmap with your business goals. Our consultants help you navigate digital transformation, optimize your tech stack, and reduce operational overhead.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="section-padding">
+        <h2>Mission & Vision</h2>
+        <div class="content-block">
+            <p><strong>Our Mission:</strong> To democratize high-end technology for businesses of all sizes. We are committed to delivering innovative, reliable, and sustainable IT solutions that drive growth, enhance security, and create lasting value for our clients and the communities they serve.</p>
+            
+            <p><strong>Our Vision:</strong> To be recognized as the world’s most client-centric IT firm, setting the gold standard for technical excellence and ethical business practices. We envision a future where MH Synthevia is the primary catalyst for digital advancement across the globe.</p>
+            
+            <p>At MH Synthevia, we believe that the future belongs to those who are bold enough to reinvent themselves. With our expertise in cloud-native development, cybersecurity, and intelligent automation, we are here to ensure that your business is ready for whatever comes next.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">MH SYNTHEVIA</div>
+        <p style="opacity: 0.7; max-width: 500px; margin: 0 auto;">Innovating Today for a Smarter Tomorrow. Leading the way in Enterprise IT and Digital Transformation.</p>
+        
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="shop.html">Solutions</a>
+            <a href="blog.html">Insights</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Support</a>
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 MH Synthevia IT Solutions. All rights reserved. | <a href="#" style="color:rgba(255,255,255,0.4);">Privacy Policy</a>
         </p>
-    </section>
+    </footer>
 
-    <!-- JavaScript for Menu Toggle -->
+    <!-- JavaScript for Hamburger Menu -->
     <script>
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
 
         hamburger.addEventListener('click', () => {
+            // Toggle Menu
             navLinks.classList.toggle('active');
+            // Animate Hamburger to X
             hamburger.classList.toggle('toggle');
+            
+            // Prevent background scrolling when menu is open
+            if(navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'initial';
+            }
+        });
+
+        // Close menu when a link is clicked (useful for one-page navigation)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('toggle');
+                document.body.style.overflow = 'initial';
+            });
         });
     </script>
 
