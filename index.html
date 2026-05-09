@@ -3,126 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MH Synthevia IT Solutions | Modern Tech Excellence</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>MH Synthevia | Leading Information Technology & Digital Solutions</title>
+    <meta name="title" content="MH Synthevia | Leading Information Technology & Digital Solutions">
+    <meta name="description" content="MH Synthevia offers cutting-edge IT solutions including software development, cloud engineering, and cybersecurity to help businesses scale globally.">
+    <meta name="keywords" content="MH Synthevia, IT Company, Software Development, Cloud Solutions, Cyber Security, Digital Transformation">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mhsynthevia.com/">
+    <meta property="og:title" content="MH Synthevia | Modern Tech Excellence">
+    <meta property="og:description" content="Engineering modern enterprises with scalable IT infrastructure and custom software solutions.">
+    <meta property="og:image" content="logo.png">
+
     <style>
         /* Modern Corporate Style */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', Arial, sans-serif; }
         
-        body { background-color: #ffffff; color: #1a1a1a; line-height: 1.6; }
+        body { background-color: #ffffff; color: #1a1a1a; line-height: 1.8; }
 
-        /* Navigation - Blue & White Theme */
+        /* Navigation - Adjusted as per your file list */
         nav {
             background: #ffffff;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 8%;
+            padding: 10px 5%;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 10px rgba(0,0,0,0.08);
         }
 
-        .logo { font-size: 22px; font-weight: 800; color: #002d72; letter-spacing: -0.5px; }
-        .logo span { color: #00b1eb; } /* Accent color for 'IT Solutions' */
+        .logo-container { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 50px; width: auto; margin-right: 10px; }
+        .brand-name { font-size: 20px; font-weight: 800; color: #002d72; }
 
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 35px; }
-        nav ul li a { text-decoration: none; color: #444; font-size: 14px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
-        nav ul li a:hover { color: #002d72; }
+        nav ul { display: flex; list-style: none; align-items: center; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { text-decoration: none; color: #555; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav ul li a:hover { color: #00b1eb; }
 
-        /* Hero Section - High Tech Look */
+        /* Hero Section */
         .hero {
-            height: 70vh;
-            background: linear-gradient(135deg, rgba(0,45,114,0.9) 0%, rgba(0,20,50,0.8) 100%), 
-                        url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1500') no-repeat center center/cover;
+            height: 80vh;
+            background: linear-gradient(135deg, rgba(0,45,114,0.85) 0%, rgba(0,20,50,0.8) 100%), 
+                        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1500') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             padding: 0 10%;
             color: white;
+            text-align: center;
         }
 
-        .hero h1 { font-size: 3.5rem; max-width: 800px; line-height: 1.1; margin-bottom: 20px; }
-        .hero p { font-size: 1.3rem; max-width: 600px; margin-bottom: 35px; opacity: 0.9; }
+        .hero h1 { font-size: 3.8rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin-bottom: 35px; opacity: 0.9; }
 
-        .cta-btn {
-            background: #00b1eb;
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 2px;
-            transition: 0.3s;
-        }
-        .cta-btn:hover { background: white; color: #002d72; }
+        /* Content Sections */
+        .section-container { padding: 80px 10%; }
+        .bg-light { background: #f9fbff; }
+        h2 { font-size: 2.5rem; color: #002d72; margin-bottom: 25px; text-align: center; }
+        .content-text { font-size: 1.1rem; color: #444; max-width: 900px; margin: 0 auto 40px auto; }
 
-        /* Services Grid */
-        .solutions { padding: 80px 10%; background: #f4f7fa; }
-        .solutions h2 { font-size: 2.2rem; margin-bottom: 40px; color: #002d72; border-left: 5px solid #00b1eb; padding-left: 15px; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-
+        /* Grid Layout */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
         .card {
             background: white;
-            padding: 35px;
-            border-top: 4px solid transparent;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: 0.4s ease;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-bottom: 3px solid transparent;
         }
-        .card:hover { border-top-color: #00b1eb; transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.1); }
-        .card h3 { margin-bottom: 15px; font-size: 1.4rem; color: #333; }
-        .card p { color: #666; font-size: 0.95rem; }
+        .card:hover { transform: translateY(-10px); border-bottom-color: #00b1eb; }
+        .card h3 { color: #002d72; margin-bottom: 15px; }
 
-        /* Footer */
-        footer { background: #002d72; color: white; padding: 50px 10%; text-align: center; }
-        .footer-text { opacity: 0.7; font-size: 14px; }
+        footer { background: #001a41; color: white; padding: 60px 10%; text-align: center; }
+        .footer-links a { color: #00b1eb; text-decoration: none; margin: 0 10px; font-size: 14px; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">MH SYNTHEVIA <span>IT SOLUTIONS</span></div>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="MH Synthevia Logo" class="logo-img">
+            <span class="brand-name">MH SYNTHEVIA</span>
+        </a>
         <ul>
-            <li><a href="#">Industries</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="lookbook.html">Lookbook</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <section class="hero">
-        <h1>Engineering Modern Enterprises.</h1>
-        <p>Expert IT solutions designed to accelerate growth and digital transformation for your business.</p>
-        <a href="#" class="cta-btn">Learn More</a>
+        <h1>MH SYNTHEVIA</h1>
+        <p>Empowering the future through innovative technology, seamless integration, and digital excellence.</p>
     </section>
 
-    <section class="solutions">
-        <h2>What We Do</h2>
+    <section class="section-container">
+        <h2>About MH Synthevia</h2>
+        <div class="content-text">
+            <p>Welcome to <strong>MH Synthevia</strong>, a premier Information Technology powerhouse dedicated to reshaping the digital landscape. In an era where technology is the backbone of every successful enterprise, we stand as your strategic partner in innovation. Our journey began with a simple mission: to bridge the gap between complex technical challenges and elegant, scalable solutions.</p>
+            <p style="margin-top: 20px;">At MH Synthevia, we don't just write code; we engineer experiences. With a team of world-class developers, data scientists, and cybersecurity experts, we provide a holistic approach to IT services. Whether you are a startup looking for your first MVP or a global corporation modernizing legacy systems, our expertise ensures your business remains resilient and competitive.</p>
+        </div>
+    </section>
+
+    <section class="section-container bg-light">
+        <h2>Our Core Specializations</h2>
         <div class="grid">
             <div class="card">
-                <h3>Cloud Engineering</h3>
-                <p>Scalable cloud infrastructure to streamline your operations and reduce costs.</p>
+                <h3>Enterprise Software</h3>
+                <p>We develop high-performance custom software tailored to your business workflow. From CRM systems to automated ERP solutions, MH Synthevia ensures efficiency at every level.</p>
             </div>
             <div class="card">
-                <h3>Data Analytics</h3>
-                <p>Turning complex data into actionable insights for smarter business decisions.</p>
+                <h3>Cloud Transformation</h3>
+                <p>Migrate with confidence. Our cloud experts specialize in AWS, Azure, and Google Cloud, providing secure, scalable, and cost-effective infrastructure management.</p>
             </div>
             <div class="card">
-                <h3>Cyber Defense</h3>
-                <p>Proactive security measures to keep your enterprise data safe from evolving threats.</p>
+                <h3>Cybersecurity & Intelligence</h3>
+                <p>Protecting your digital assets is our top priority. We implement multi-layered security protocols, real-time threat monitoring, and advanced encryption techniques.</p>
             </div>
             <div class="card">
-                <h3>Software Development</h3>
-                <p>Custom-built applications focused on performance and user experience.</p>
+                <h3>AI & Machine Learning</h3>
+                <p>Harness the power of data. We build intelligent algorithms that provide predictive insights, helping you make data-driven decisions faster than ever before.</p>
+            </div>
+            <div class="card">
+                <h3>E-Commerce Excellence</h3>
+                <p>Our retail tech solutions integrate seamless payment gateways, inventory management, and personalized user journeys to boost your online sales.</p>
+            </div>
+            <div class="card">
+                <h3>Digital Strategy</h3>
+                <p>Beyond technology, we offer consultancy to align your IT investments with your long-term business goals, ensuring a maximum return on investment.</p>
             </div>
         </div>
     </section>
 
+    <section class="section-container">
+        <h2>Our Mission & Vision</h2>
+        <div class="content-text">
+            <p><strong>Our Mission:</strong> To provide accessible, high-quality, and innovative IT solutions that empower businesses to thrive in the digital age. We strive for excellence through continuous learning and technological adaptation.</p>
+            <p style="margin-top: 20px;"><strong>Our Vision:</strong> To become a global leader in technology services, recognized for our commitment to integrity, creativity, and the success of our clients. We envision a world where MH Synthevia’s solutions are the standard for digital efficiency.</p>
+        </div>
+    </section>
+
     <footer>
-        <p><strong>MH SYNTHEVIA IT SOLUTIONS</strong></p><br>
-        <p class="footer-text">&copy; 2026 MH Synthevia IT Solutions. All rights reserved.</p>
+        <p style="font-size: 20px; font-weight: bold;">MH SYNTHEVIA</p>
+        <p style="opacity: 0.6; margin-top: 10px;">The Future of Digital Intelligence</p>
+        <div class="footer-links" style="margin: 20px 0;">
+            <a href="about.html">About Us</a> | 
+            <a href="product.html">Products</a> | 
+            <a href="blog.html">Blog</a> | 
+            <a href="contact.html">Support</a>
+        </div>
+        <p class="footer-text">&copy; 2026 MH Synthevia. All rights reserved.</p>
     </footer>
 
 </body>
