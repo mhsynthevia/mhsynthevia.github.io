@@ -3,25 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - MH Synthevia</title>
+    <title>Admin Dashboard | MH Synthevia</title>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f0f0f0; }
-        .admin-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-        .login-form { background: #fff; padding: 2rem; border-radius: 5px; max-width: 400px; margin: 0 auto; }
-        input, button { width: 100%; padding: 0.5rem; margin: 0.5rem 0; border: 1px solid #ddd; border-radius: 3px; }
-        button { background: #2c3e50; color: #fff; cursor: pointer; }
+        :root {
+            --primary-bg: #001a41;
+            --sidebar-width: 260px;
+            --accent-color: #00b1eb;
+            --text-light: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f4f7f6; display: flex; }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--primary-bg);
+            color: white;
+            position: fixed;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--accent-color);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+
+        .nav-menu { list-style: none; }
+        .nav-menu li { margin-bottom: 15px; }
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .nav-menu a i { margin-right: 15px; width: 20px; }
+        .nav-menu a:hover, .nav-menu a.active {
+            background: var(--accent-color);
+            color: #fff;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            width: calc(100% - var(--sidebar-width));
+            padding: 30px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Dashboard Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .stat-icon {
+            width: 50px; height: 50px;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; color: white;
+            margin-right: 20px;
+        }
+
+        /* Tables */
+        .data-table-container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { text-align: left; padding: 15px; border-bottom: 1px solid #eee; }
+        th { color: #888; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; }
+        
+        .status { padding: 5px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+        .status.completed { background: #d4edda; color: #155724; }
+        .status.pending { background: #fff3cd; color: #856404; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar { width: 70px; padding: 15px 5px; }
+            .sidebar h2, .nav-menu span { display: none; }
+            .main-content { margin-left: 70px; width: calc(100% - 70px); }
+        }
     </style>
 </head>
 <body>
-    <div class="admin-container">
-        <h1>Admin Panel</h1>
-        <div class="login-form">
-            <h2>Login</h2>
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <button>Login</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>MHS Admin</h2>
+        <ul class="nav-menu">
+            <li><a href="#" class="active"><i class="fas fa-th-large"></i> <span>Dashboard</span></a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i> <span>Orders</span></a></li>
+            <li><a href="#"><i class="fas fa-box"></i> <span>Products</span></a></li>
+            <li><a href="#"><i class="fas fa-users"></i> <span>Users</span></a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+            <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h3>Welcome Back, Admin</h3>
+            <div class="user-profile">
+                <i class="fas fa-bell" style="margin-right: 20px; color: #888; cursor: pointer;"></i>
+                <strong>Admin User</strong>
+            </div>
+        </header>
+
+        <!-- Stats Section -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #4e73df;"><i class="fas fa-dollar-sign"></i></div>
+                <div><p style="color: #888;">Earnings</p><h3>$4,200</h3></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #1cc88a;"><i class="fas fa-shopping-bag"></i></div>
+                <div><p style="color: #888;">Orders</p><h3>156</h3></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #36b9cc;"><i class="fas fa-tasks"></i></div>
+                <div><p style="color: #888;">Queries</p><h3>12</h3></div>
+            </div>
+        </div>
+
+        <!-- Recent Activity Table -->
+        <div class="data-table-container">
+            <h3>Recent Orders</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Product</th>
+                        <th>Customer</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#MHS-9021</td>
+                        <td>CRM Pro License</td>
+                        <td>Ali Khan</td>
+                        <td>$199.00</td>
+                        <td><span class="status completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>#MHS-9022</td>
+                        <td>Cloud Node</td>
+                        <td>Sara Ahmed</td>
+                        <td>$120.00</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
+
 </body>
 </html>
