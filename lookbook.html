@@ -3,44 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lookbook - MH Synthevia</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Lookbook | MH Synthevia - Our Culture & Workspace</title>
+    <meta name="description" content="Explore the life at MH Synthevia. A visual journey through our innovation labs, team collaborations, and tech culture.">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        header { background: #2c3e50; color: #fff; padding: 1rem 0; text-align: center; }
-        nav { background: #34495e; padding: 1rem; }
-        nav a { color: #fff; margin: 0 1rem; text-decoration: none; }
-        main { padding: 2rem; max-width: 1200px; margin: 0 auto; }
-        .lookbook-item { display: inline-block; margin: 1rem; text-align: center; }
-        .lookbook-item img { width: 200px; height: 200px; background: #ddd; border-radius: 5px; }
-        footer { background: #2c3e50; color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
+        /* Consistent Global Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #ffffff; color: #1a1a1a; overflow-x: hidden; }
+
+        /* Navigation (Consistent with other pages) */
+        nav {
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+            height: 80px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+        .logo-container { display: flex; align-items: center; text-decoration: none; z-index: 1002; }
+        .logo-img { height: 50px; width: auto; margin-right: 12px; }
+        .brand-name { font-size: 22px; font-weight: 800; color: #002d72; }
+
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { text-decoration: none; color: #444; font-size: 14px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: #00b1eb; }
+
+        /* Lookbook Header */
+        .lookbook-header {
+            text-align: center;
+            padding: 80px 10% 40px;
+            background: #f8faff;
+        }
+        .lookbook-header h1 { font-size: 3.5rem; color: #002d72; font-weight: 900; margin-bottom: 10px; }
+        .lookbook-header p { font-size: 1.2rem; color: #666; max-width: 700px; margin: 0 auto; }
+
+        /* Lookbook Grid (Masonry Style) */
+        .lookbook-gallery {
+            padding: 50px 8%;
+            columns: 3; /* Desktop: 3 columns */
+            column-gap: 20px;
+        }
+
+        .gallery-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: 0.4s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            transition: 0.5s;
+        }
+
+        /* Hover Overlay */
+        .overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(0, 45, 114, 0.9));
+            height: 0;
+            overflow: hidden;
+            transition: 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            color: white;
+        }
+
+        .gallery-item:hover .overlay { height: 100%; }
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        .overlay h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 5px; }
+        .overlay p { font-size: 0.9rem; opacity: 0.8; }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .lookbook-gallery { columns: 2; }
+            .lookbook-header h1 { font-size: 2.5rem; }
+            /* Hamburger Logic Same as before */
+            .hamburger { display: block; cursor: pointer; z-index: 1002; }
+            .hamburger span { display: block; width: 28px; height: 3px; background: #002d72; margin: 6px 0; transition: 0.4s; }
+            .nav-links {
+                position: fixed; top: 0; right: -100%; height: 100vh; width: 100%;
+                background: #ffffff; flex-direction: column; justify-content: center; align-items: center;
+                transition: 0.5s ease; z-index: 1000;
+            }
+            .nav-links.active { right: 0; }
+            .nav-links li { margin: 20px 0; }
+        }
+
+        @media (max-width: 600px) {
+            .lookbook-gallery { columns: 1; }
+        }
+
+        footer { background: #001a41; color: white; padding: 50px 10%; text-align: center; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Lookbook</h1>
-    </header>
+
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="shop.html">Shop</a>
-        <a href="blog.html">Blog</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="MH Synthevia Logo" class="logo-img">
+            <span class="brand-name">MH SYNTHEVIA</span>
+        </a>
+        <div class="hamburger" id="hamburger">
+            <span class="line1"></span><span class="line2"></span><span class="line3"></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="lookbook.html" style="color: #00b1eb;">Lookbook</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
-    <main>
-        <h2>Our Latest Lookbook</h2>
-        <div class="lookbook-item">
-            <div style="width: 200px; height: 200px; background: #ddd; border-radius: 5px;"></div>
-            <p>Spring Collection</p>
+
+    <header class="lookbook-header">
+        <h1>Our Lookbook</h1>
+        <p>A visual glimpse into the innovation, collaboration, and high-tech environment at MH Synthevia.</p>
+    </header>
+
+    <div class="lookbook-gallery">
+        <!-- Item 1: Office -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600" alt="Innovation Lab">
+            <div class="overlay">
+                <h3>Innovation Lab</h3>
+                <p>Where code becomes reality.</p>
+            </div>
         </div>
-        <div class="lookbook-item">
-            <div style="width: 200px; height: 200px; background: #ddd; border-radius: 5px;"></div>
-            <p>Summer Collection</p>
+
+        <!-- Item 2: Team -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600" alt="Team Collaboration">
+            <div class="overlay">
+                <h3>Collaboration</h3>
+                <p>Brilliant minds working together.</p>
+            </div>
         </div>
-    </main>
+
+        <!-- Item 3: Tech -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="Cybersecurity Hub">
+            <div class="overlay">
+                <h3>The Security Hub</h3>
+                <p>Monitoring global digital threats.</p>
+            </div>
+        </div>
+
+        <!-- Item 4: Server -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=600" alt="Data Center">
+            <div class="overlay">
+                <h3>Cloud Core</h3>
+                <p>Powering next-gen infrastructures.</p>
+            </div>
+        </div>
+
+        <!-- Item 5: Meeting -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=600" alt="Brainstorming">
+            <div class="overlay">
+                <h3>Strategy Sessions</h3>
+                <p>Planning the digital roadmap.</p>
+            </div>
+        </div>
+
+        <!-- Item 6: Relax -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=600" alt="Work Life Balance">
+            <div class="overlay">
+                <h3>Culture</h3>
+                <p>More than just a workplace.</p>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2026 MH Synthevia. All rights reserved.</p>
+        <p><strong>MH SYNTHEVIA</strong></p>
+        <p style="opacity: 0.6; margin-top: 10px;">Visualizing the Future of Technology.</p>
+        <p style="margin-top: 20px;">&copy; 2026 MH Synthevia. All rights reserved.</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('toggle');
+        });
+    </script>
+
 </body>
 </html>
