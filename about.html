@@ -3,46 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - MH Synthevia</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>About Us | MH Synthevia - Our Story & Mission</title>
+    <meta name="description" content="Learn more about MH Synthevia, our journey, our values, and how we are leading the IT industry with innovation and excellence.">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        header { background: #2c3e50; color: #fff; padding: 1rem 0; text-align: center; }
-        nav { background: #34495e; padding: 1rem; }
-        nav a { color: #fff; margin: 0 1rem; text-decoration: none; }
-        main { padding: 2rem; max-width: 1200px; margin: 0 auto; }
-        footer { background: #2c3e50; color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
+        /* Same Global Styles for Consistency */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #ffffff; color: #1a1a1a; line-height: 1.8; overflow-x: hidden; }
+
+        /* Navigation (Same as Index) */
+        nav {
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+            height: 80px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+        .logo-container { display: flex; align-items: center; text-decoration: none; z-index: 1002; }
+        .logo-img { height: 50px; width: auto; margin-right: 12px; }
+        .brand-name { font-size: 22px; font-weight: 800; color: #002d72; }
+
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { text-decoration: none; color: #444; font-size: 14px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: #00b1eb; }
+
+        /* Hamburger for Mobile */
+        .hamburger { display: none; cursor: pointer; z-index: 1002; padding: 10px; }
+        .hamburger span { display: block; width: 28px; height: 3px; background: #002d72; margin: 6px 0; transition: 0.4s; }
+
+        @media (max-width: 992px) {
+            .hamburger { display: block; }
+            .nav-links {
+                position: fixed; top: 0; right: -100%; height: 100vh; width: 100%;
+                background: #ffffff; flex-direction: column; justify-content: center; align-items: center;
+                transition: 0.5s ease; z-index: 1000;
+            }
+            .nav-links.active { right: 0; }
+            .nav-links li { margin: 20px 0; }
+            .hamburger.toggle .line1 { transform: rotate(-45deg) translate(-6px, 7px); }
+            .hamburger.toggle .line2 { opacity: 0; }
+            .hamburger.toggle .line3 { transform: rotate(45deg) translate(-6px, -7px); }
+        }
+
+        /* About Hero Section */
+        .about-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0,45,114,0.85), rgba(0,20,50,0.85)), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .about-hero h1 { font-size: 3.5rem; font-weight: 900; }
+
+        /* Content Sections */
+        .section-padding { padding: 80px 10%; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        h2 { font-size: 2.2rem; color: #002d72; margin-bottom: 25px; border-left: 5px solid #00b1eb; padding-left: 20px; }
+        p { margin-bottom: 25px; font-size: 1.1rem; color: #444; text-align: justify; }
+
+        /* Values Grid */
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .value-card { background: #f8faff; padding: 40px; border-radius: 10px; text-align: center; transition: 0.3s; }
+        .value-card:hover { background: #002d72; color: white; transform: translateY(-10px); }
+        .value-card h3 { margin-bottom: 15px; }
+
+        footer { background: #001a41; color: white; padding: 60px 10%; text-align: center; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>About MH Synthevia</h1>
-    </header>
+
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="shop.html">Shop</a>
-        <a href="blog.html">Blog</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <main>
-        <h2>About Our Company</h2>
-        <p>MH Synthevia is a global leader in innovation and technology solutions. Founded with a vision to transform businesses through cutting-edge technology, we have been serving clients worldwide for over a decade.</p>
-        <h3>Our Mission</h3>
-        <p>To deliver innovative, reliable, and cost-effective solutions that empower businesses to achieve their goals.</p>
-        <h3>Our Values</h3>
-        <ul>
-            <li>Innovation</li>
-            <li>Excellence</li>
-            <li>Integrity</li>
-            <li>Customer Focus</li>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="MH Synthevia Logo" class="logo-img">
+            <span class="brand-name">MH SYNTHEVIA</span>
+        </a>
+        <div class="hamburger" id="hamburger">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" style="color: #00b1eb;">About</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-        <h3>Our Team</h3>
-        <p>Our team consists of experienced professionals dedicated to providing the best service to our clients.</p>
-    </main>
+    </nav>
+
+    <section class="about-hero">
+        <h1>About MH Synthevia</h1>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <h2>Our Legacy & Evolution</h2>
+            <p><strong>MH Synthevia</strong> was born out of a passion for technological disruption. Since our inception, we have been driven by a single goal: to empower enterprises with the tools they need to lead in a digital-first world. What started as a small team of visionary engineers has now evolved into a global IT consulting and software development powerhouse.</p>
+            
+            <p>Our journey has been defined by constant adaptation. As the landscape of Information Technology shifted from local servers to cloud ecosystems, and from manual data entry to Artificial Intelligence, MH Synthevia was always at the forefront. We have successfully guided hundreds of clients through their digital transformation journeys, ensuring that technology remains an asset, never a liability.</p>
+
+            <h2>Why We Are Different</h2>
+            <p>At MH Synthevia, we believe that "good enough" is the enemy of greatness. Our differentiation lies in our unique <strong>Synthevia Methodology</strong>—a proprietary framework that combines agile development with deep psychological insights into user experience. We don't just build systems that work; we build systems that people love to use.</p>
+            
+            <p>Transparency is the cornerstone of our operations. From the initial consultation to the final deployment, our clients have real-time visibility into our progress. This collaborative approach ensures that the final product is perfectly aligned with the client’s vision and business objectives. We take pride in our ability to solve the "unsolvable" problems, turning complex technical hurdles into streamlined business opportunities.</p>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: #f4f7fa;">
+        <div class="container">
+            <h2 style="text-align: center; border: none;">Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Innovation</h3>
+                    <p>We constantly push the boundaries of what's possible, exploring new technologies to give our clients a competitive edge.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Excellence</h3>
+                    <p>Quality is not an option; it's our standard. We deliver nothing short of perfection in every line of code we write.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Security</h3>
+                    <p>In a world of digital threats, we treat your data as our own. Security is baked into the DNA of every solution we provide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <h2>Looking to the Future</h2>
+            <p>The next decade of technology will be defined by Quantum Computing, advanced Robotics, and deeper AI integration. MH Synthevia is already investing heavily in these areas to ensure our clients are prepared for the future. Our research and development labs are working day and night to prototype the next generation of enterprise tools.</p>
+            
+            <p>As we continue to grow, our commitment to our clients remains unshakable. Whether you are a small business owner in your first year or a Fortune 500 executive, MH Synthevia provides the same level of dedication, expertise, and passion to every project. Together, let’s engineer a smarter, more connected, and more secure future.</p>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 MH Synthevia. All rights reserved.</p>
+        <p><strong>MH SYNTHEVIA IT SOLUTIONS</strong></p>
+        <p style="opacity: 0.6; margin-top: 10px;">Building the Digital Foundations of Tomorrow.</p>
+        <p style="margin-top: 20px;">&copy; 2026 MH Synthevia. All rights reserved.</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('toggle');
+            if(navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'initial';
+            }
+        });
+    </script>
+
 </body>
 </html>
