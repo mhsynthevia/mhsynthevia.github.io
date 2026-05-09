@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // SECURITY CHECK: Agar login nahi kiya to wapas login page par bhej do
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "admin-login.html";
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | MH Synthevia</title>
+    <!-- Purana CSS Yahan Aye Ga -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ... Wohi purana CSS jo pehle diya tha ... */
+        :root { --primary-bg: #001a41; --sidebar-width: 260px; --accent-color: #00b1eb; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+        body { background: #f4f7f6; display: flex; }
+        .sidebar { width: var(--sidebar-width); height: 100vh; background: var(--primary-bg); color: white; position: fixed; padding: 20px; }
+        .main-content { margin-left: var(--sidebar-width); width: calc(100% - var(--sidebar-width)); padding: 30px; }
+        .logout-btn { background: #ff4757; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>MHS Admin</h2>
+        <!-- Menu Items -->
+        <button class="logout-btn" onclick="logout()" style="width:100%; margin-top:20px;">Logout</button>
+    </div>
+
+    <div class="main-content">
+        <h1>Dashboard Protected Area</h1>
+        <p>Welcome, you are successfully logged in!</p>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("isLoggedIn"); // Status khatam
+            window.location.href = "admin-login.html"; // Wapas login par
+        }
+    </script>
+</body>
+</html>
