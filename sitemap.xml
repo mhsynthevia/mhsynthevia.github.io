@@ -3,49 +3,49 @@
    
    <!-- Home Page -->
    <url>
-      <loc>https://www.mhsynthevia.com/index.html</loc>
+      <loc>https://mhsynthevia.com/index.html</loc>
       <lastmod>2026-05-09</lastmod>
       <priority>1.00</priority>
    </url>
 
    <!-- About Page -->
    <url>
-      <loc>https://www.mhsynthevia.com/about.html</loc>
+      <loc>https://mhsynthevia.com/about.html</loc>
       <lastmod>2026-05-09</lastmod>
       <priority>0.80</priority>
    </url>
 
-   <!-- Shop Page -->
+   <!-- Services Page -->
    <url>
-      <loc>https://www.mhsynthevia.com/services.html</loc>
+      <loc>https://mhsynthevia.com/services.html</loc>
       <lastmod>2026-05-09</lastmod>
       <priority>0.90</priority>
    </url>
 
    <!-- Blog Page -->
    <url>
-      <loc>https://www.mhsynthevia.com/blog.html</loc>
+      <loc>https://mhsynthevia.com/blog.html</loc>
       <lastmod>2026-05-09</lastmod>
       <priority>0.70</priority>
    </url>
 
    <!-- Lookbook Page -->
    <url>
-      <loc>https://www.mhsynthevia.com/lookbook.html</loc>
+      <loc>https://mhsynthevia.com/lookbook.html</loc>
       <lastmod>2026-05-09</lastmod>
       <priority>0.60</priority>
    </url>
 
    <!-- Careers Page -->
    <url>
-      <loc>https://www.mhsynthevia.com/careers.html</loc>
+      <loc>https://mhsynthevia.com/careers.html</loc>
       <lastmod>2026-05-09</lastmod>
       <priority>0.70</priority>
    </url>
 
    <!-- Contact Page -->
    <url>
-      <loc>https://www.mhsynthevia.com/contact.html</loc>
+      <loc>https://mhsynthevia.com/contact.html</loc>
       <lastmod>2026-05-09</lastmod>
       <priority>0.80</priority>
    </url>
